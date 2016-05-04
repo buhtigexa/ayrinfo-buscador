@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="myPackage" extends="struts-default">		
+		<action name="indexForm" class="com.view.IndexFormAction">
+			<result name="success">/jsp/indexForm.jsp</result>	
+		</action>        
+        <action name="advancedSearch">
+        	<result>/jsp/advancedSearchForm.jsp</result>        
+        </action>        
+        <action name="simpleSearch">
+        	<result>/jsp/simpleSearchForm.jsp</result>        
+        </action>
+        <action name="startAdvancedSearch" >
+        	<result name="input">/jsp/advancedSearchForm.jsp</result>
+        	<result name="success">/jsp/advancedSearch.jsp</result>
+        </action>
+        <action name="startSimpleSearch">
+        	<result name="input">/jsp/simpleSearchForm.jsp</result>
+        	<result name="success">/jsp/simpleSearch.jsp</result>
+        </action>
+		<action name="startIndex" class="com.view.IndexFormAction">
+			<result>/jsp/startIndex.jsp</result>
+		</action>
+		<action name="loadIndex" class="com.view.IndexFormAction">
+			<result>/jsp/loadIndex.jsp</result>
+		</action>
+		<action name="statusIndex">
+			<result>/jsp/indexingForm.jsp</result>
+		</action>
+		<action name="moreLike">
+			<result>/jsp/moreLike.jsp</result>
+		</action>
+		<action name="readLink">
+			<result>/jsp/readLink.jsp</result>
+		</action>
+		<action name="stopIndex">
+			<result>/jsp/stopIndex.jsp</result>
+		</action>		
+		<action name="showResult">
+			<result>/jsp/resultForm.jsp</result>
+		</action>		
+        <action name="*Path" method="{1}" class="com.view.IndexFormAction">
+        	<result name="success">/jsp/indexForm.jsp</result>
+        </action>
+	</package>
+</struts>
